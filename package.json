@@ -1,0 +1,11 @@
+{
+  "name": "100worte",
+  "version": "1.0.0",
+  "description": "a nodejs tutorial on how to use api endpoints",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "100worte",
+  "license": "ISC"
+}
