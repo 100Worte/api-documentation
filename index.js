@@ -18,7 +18,7 @@ const headers = {
     'x-api-key': apiKey,
   };
 
-/* This function calls the analyses POST call which takes a text as an argument and 
+/* This function calls the analyses PUT call which takes a text as an argument and 
    returns the analysis of this text. 
 */ 
 function analyze(text) {
