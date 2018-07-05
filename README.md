@@ -7,3 +7,6 @@ The link that contains all possible calls is the following: https://100worte.de/
 ## Node.js Tutorial
 This Project contains a tutorial in Node.js that can be found in this repository that explains each call in detail in node.
 
+
+## Java Tutorial
+This Project contains a JAVA tutorial that can be found in this repository that explains each call in detail.
