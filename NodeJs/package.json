@@ -7,5 +7,8 @@
     "start": "node index.js"
   },
   "author": "100worte",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
 }
