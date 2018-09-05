@@ -1,12 +1,48 @@
-# Api Documentation
+# API Documentation
 This api documentation documents how to use the current 100Worte API. 
 
-## Swagger Interface	
+
+
+## REST Interface	
 The link that contains all possible calls is the following: https://100worte.de/rest-api . In the Rest-api all endpoints can be visible and tested on the web browser interface.
 
-## Node.js Tutorial
+## General API Endpoint 
+
+The general endpoint is called using a PUT Request on this link https://100worte.de/v1/api/analyses 
+
+### Node.js Tutorial
 This Project contains a tutorial in Node.js that can be found in this repository that explains each call in detail in node.
 
 
-## Java Tutorial
+### Java Tutorial
 This Project contains a JAVA tutorial that can be found in this repository that explains each call in detail.
+
+## Compotence Monitor Endpoint
+
+The general endpoint is called using a PUT Request on this link https://100worte.de/v1/api/competence_monitor/analyses .
+The endpoint takes as an argument a JSON as following:
+```
+{
+  "title": "string",
+  "folder": "string",
+  "text": "string"
+}
+```
+The text attirbute is the only required attribute and it donotes the text that needs to be analyzed. 
+The folder and the title attributes are optional and are used in the case where one wants to see the results in our [dashboard](https://www.100worte.de/dashboard) .
+The endpoint returns the skill set the text describes. 
+The result hence has the following format:
+```
+{
+  "leadership": 0,
+  "achievement": 0,
+  "affiliation": 0,
+  "contact": 0,
+  "analytics": 0,
+  "emotionality": 0,
+  "selfConfidence": 0
+}
+```
+We currently do not have tutorials for this endpoint, but it should be very similar to the other tutorial for the general case.
+
+
