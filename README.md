@@ -43,6 +43,5 @@ The result hence has the following format:
   "selfConfidence": 0
 }
 ```
-We currently do not have tutorials for this endpoint, but it should be very similar to the other tutorial for the general case.
 
 
