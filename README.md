@@ -19,7 +19,7 @@ This Project contains a JAVA tutorial that can be found in this repository that 
 
 ## Compotence Monitor Endpoint
 
-The general endpoint is called using a PUT Request on this link https://100worte.de/v1/api/competence_monitor/analyses .
+The compotence monitor endpoint is called using a PUT Request on this link https://100worte.de/v1/api/competence_monitor/analyses .
 The endpoint takes as an argument a JSON as following:
 ```
 {
