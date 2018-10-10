@@ -38,7 +38,18 @@ public class WorteAPI {
         return new WorteStatus(responseJson);
     }
 
-    public WorteResult analyze(String text) throws IOException {
+    public WorteResult analyze(String text) throws IOException
+    {
+        JSONObject responseJson = analyzeGeneral(text,"analyses");
+        return new WorteResult(responseJson);
+    }
+    
+    public WorteSkills analyzeCM(String text) throws IOException {
+        JSONObject responseJson = analyzeGeneral(text,"competence_monitor/analyses");
+        return new WorteSkills(responseJson);
+    }
+
+    public JSONObject analyzeGeneral(String text ,String subUrl) throws IOException {
         JSONObject json = new JSONObject();
         json.put("text", text);
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json.toString());
@@ -49,7 +60,7 @@ public class WorteAPI {
                 .header("Content-Type", "application/json")
                 .header("'Accept'", "application/json")
                 .header("x-api-key", apiKey)
-                .url(baseUrl + "analyses")
+                .url(baseUrl + subUrl)
                 .put(body).build();
 
         Response response = client.newCall(request).execute();
@@ -57,6 +68,6 @@ public class WorteAPI {
             throw new IOException(response.body().string());
         }
         JSONObject responseJson = new JSONObject(response.body().string());
-        return new WorteResult(responseJson);
+        return responseJson;
     }
 }
