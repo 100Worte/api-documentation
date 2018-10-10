@@ -19,7 +19,7 @@ This Project contains a JAVA tutorial that can be found in this repository that 
 
 ## Compotence Monitor Endpoint
 
-The general endpoint is called using a PUT Request on this link https://100worte.de/v1/api/competence_monitor/analyses .
+The compotence monitor endpoint is called using a PUT Request on this link https://100worte.de/v1/api/competence_monitor/analyses .
 The endpoint takes as an argument a JSON as following:
 ```
 {
@@ -28,7 +28,7 @@ The endpoint takes as an argument a JSON as following:
   "text": "string"
 }
 ```
-The text attirbute is the only required attribute and it donotes the text that needs to be analyzed. 
+The text attirbute is the only required attribute and it denotes the text that needs to be analyzed. 
 The folder and the title attributes are optional and are used in the case where one wants to see the results in our [dashboard](https://www.100worte.de/dashboard) .
 The endpoint returns the skill set the text describes. 
 The result hence has the following format:
