@@ -85,16 +85,17 @@ The response has the following format:
 }
 ```
 
-The `"index"` counts the number of epoch in the stream identified by `"id"`. The `"docCount"` gives the number of documents in the epoch, while `"tokCount"` gives the number of tokens extracted from these documents (with multiplicity). In the `"significant"` list you will find the tokens that appeared with a significantly higher than expected frequency, and a measure for that significance. Word pairs (in a neighbourhood window) are also accounted for, and given as a single token, joined with a Unicode `NULL` character (U+0000).
+The `"index"` counts the number of epoch in the stream identified by `"id"`. The `"docCount"` gives the number of documents in the epoch, while `"tokCount"` gives the number of tokens extracted from these documents (with multiplicity). In the `"significant"` list you will find the tokens that appeared with a significantly higher than expected frequency, and a measure for that significance. Word pairs (in a neighbourhood window) are also accounted for, and given as a single token, joined with a Unicode `NULL` character (U+0000). This allows for an intuitive graph-based visualization, as in [Exploring Significant Interactions in Live News][2].
 
 ### Background
 
 Our event detection is built on the following publication:
 
-* Schubert, Erich, Michael Weiler, and Hans-Peter Kriegel. "SigniTrend: Scalable Detection of Emerging Topics in Textual Streams by Hashed Significance Thresholds." Proceedings of the 20th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM, 2014, doi:[10.1145/2623330.2623740][1]
+* Schubert, Erich, Michael Weiler, and Hans-Peter Kriegel. ["SigniTrend: Scalable Detection of Emerging Topics in Textual Streams by Hashed Significance Thresholds."][1] Proceedings of the 20th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM, 2014, doi:10.1145/2623330.2623740
 
 #### Cold start
 
 The model incrementally aggregates statistics over time. In the first few epochs, these statistics may still be unreliable (cold start). Make sure to feed in several epochs, before expecting good results.
 
 [1]: https://dx.doi.org/10.1145/2623330.2623740 "SigniTrend: Scalable Detection of Emerging Topics in Textual Streams by Hashed Significance Thresholds."
+[2]: https://dbs.ifi.uni-heidelberg.de/files/Team/eschubert/publications/NewsIR2018-SignificantInteractions.pdf "Exploring Significant Interactions in Live News"
