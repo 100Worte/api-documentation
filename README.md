@@ -49,7 +49,7 @@ The result hence has the following format:
 
 ## Job Profile Endpoint
 
-The job profile endpoints are used to interact with the job profiles. Job profiles are used to compare the text input against the ideal values.
+The job profile endpoints are used to interact with the job profiles. Job profiles are used to compare the text input against the ideal values. The `means` field specifies the average, and the `stds` field the standard deviation of the ideal distribution. Where new measurements of a category land with respect to this distribution, is captured by the z-score. A z-score with a high absolute value indicates a deviation in that category. That means, either too many or too few words of that category were used, relative to the job profile. This is used to score aspects of the text, and make suggestions.
 
 ```
 {
@@ -89,7 +89,7 @@ This endpoint is using a job profile to compare it to the input text.
 }
 ```
 
-The Augmented Writing Talent Intelligence endpoint returns a list of highlights with their start- and end positions relative to the input text. Each highlight has a category attached. The overall scores are returned in the `scores` object. Words that can be replaced, are listed in `wordSuggestions`. Sentences that are to complex are returned as a tuple of start- and end position indices in `complexSentences`.
+The Augmented Writing Talent Intelligence endpoint returns a list of highlights with their start- and end positions relative to the input text. Each highlight has one category (or more) attached. The overall scores are returned in the `scores` object. Words that can be replaced, are listed in `wordSuggestions`. Sentences that are too complex are returned as a tuple of start- and end position indices in `complexSentences`. In `sidebarNotes`, you will find general feedback for you text (text length, sentence length, repetitions, ...).
 
 ```
 {
