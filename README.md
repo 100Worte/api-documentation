@@ -47,4 +47,103 @@ The result hence has the following format:
 }
 ```
 
+## Job Profile Endpoint
+
+The job profile endpoints are used to interact with the job profiles. Job profiles are used to compare the text input against the ideal values.
+
+```
+{
+  "name": "string",
+  "company-wide-visibility": true,
+  "values": {
+    "stds": {
+      "jointPosAffil": 0,
+      "jointPosAchieve": 0,
+      "jointPosPower": 0,
+      "relativ": 0,
+      "adverb": 0,
+      "we": 0
+    },
+    "means": {
+      "jointPosAffil": 0,
+      "jointPosAchieve": 0,
+      "jointPosPower": 0,
+      "relativ": 0,
+      "adverb": 0,
+      "we": 0
+    }
+  }
+}
+```
+
+The profiles can be visible to the user only or company wide, depending on the `company-wide-visibility` flag. 
+
+## Augmented Writing Talent Intelligence Endpoint
+
+This endpoint is using a job profile to compare it to the input text.
+
+```
+{
+  "job-profile-id": "string",
+  "text": "string"
+}
+```
+
+The Augmented Writing Talent Intelligence endpoint returns a list of highlights with their start- and end positions relative to the input text. Each highlight has a category attached. The overall scores are returned in the `scores` object. Words that can be replaced, are listed in `wordSuggestions`. Sentences that are to complex are returned as a tuple of start- and end position indices in `complexSentences`.
+
+```
+{
+  "highlights": [
+    {
+      "categories": [
+        "string"
+      ],
+      "pos": [
+        0
+      ]
+    }
+  ],
+  "sidebarNotes": [
+    {
+      "text": "string",
+      "level": 0,
+      "image": "string",
+      "content": "string",
+      "title": "string"
+    }
+  ],
+  "wordSuggestions": [
+    {
+      "text": "string",
+      "pos": [
+        0
+      ],
+      "suggestions": [
+        {}
+      ]
+    }
+  ],
+  "complexSentences": [
+    [
+      0
+    ]
+  ],
+  "scores": {
+    "genderBalance": 0,
+    "jointPosAchieve": 0,
+    "jointPosAffil": 0,
+    "jointPosPower": 0,
+    "overall": 0
+  },
+  "highlightTexts": {
+    "jointPosAchieve": "string",
+    "jointPosAffil": "string",
+    "jointPosPower": "string",
+    "feminine": "string",
+    "masculine": "string",
+    "complexSentences": "string"
+  }
+}
+```
+
 
